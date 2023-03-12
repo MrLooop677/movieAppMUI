@@ -1,10 +1,12 @@
 import React from 'react'
+import SearchComp from './componenet/SearchComp'
+import { Box } from '@mui/material'
 
 const Home = () => {
   return (
-    <div>
-      Home
-    </div>
+    <Box>
+      <SearchComp/>
+    </Box>
   )
 }
 
