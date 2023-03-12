@@ -1,19 +1,25 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import SwitchMode from "./components/SwitchMode";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import { darkTheme, lightTheme } from "./theme/theme";
+import { useState } from "react";
 
 
 function App() {
+  const [isDarkMode,setDarkMode]=useState(false)
   return (
-    <div className="App">
+    <ThemeProvider theme={isDarkMode?darkTheme:lightTheme}>
+      <Box sx={{bgcolor:"background.body",minHeight:"100vh"}}>
       <Header/>
       <Container>
-      <SwitchMode/>
+      <SwitchMode isDarkMode={isDarkMode} setDarkMode={setDarkMode}/>
       <Outlet/>
 
       </Container>
-    </div>
+      </Box>
+    </ThemeProvider>
   );
 }
 
