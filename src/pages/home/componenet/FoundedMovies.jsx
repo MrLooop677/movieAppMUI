@@ -1,11 +1,11 @@
 import React from "react";
+import Grid from "@mui/material/Grid";
 import CardMovie from "./CardMovie";
-import { Box, Grid } from "@mui/material";
 
 const FoundedMovies = () => {
   console.log(process.env.REACT_APP_API_KEY);
   return (
-    <Box>
+    <div>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6} md={3}>
           <CardMovie />
@@ -41,7 +41,7 @@ const FoundedMovies = () => {
           <CardMovie />
         </Grid>
       </Grid>
-    </Box>
+    </div>
   );
 };
 
