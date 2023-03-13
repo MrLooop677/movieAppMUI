@@ -8,7 +8,7 @@ const Header = () => {
   const matches=useMediaQuery(theme.breakpoints.down("sm"))
   return (
     <>
-      <Box sx={{bgcolor:"black",color:"#fff",padding:1}} component="header">
+      <Box sx={{bgcolor:"background.header",color:"#fff",padding:1}} component="header">
         <Container >
           <Grid container justifyContent={matches?"center":"space-between"} alignItems="center">
             <Grid item>
