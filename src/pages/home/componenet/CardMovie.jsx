@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { styled } from "@mui/material/styles";
 
-const CardMovie = () => {
+const CardMovie = ({ Poster, year, type, title, imdbID }) => {
   const theme = useTheme();
   const CardContentStyle = styled(CardContent)`
     position: absolute;
@@ -34,19 +34,16 @@ const CardMovie = () => {
     <>
       <CardActionArea>
         <CardStyle>
-          <CardMedia
-            sx={{ height: "100%" }}
-            image="https://m.media-amazon.com/images/M/MV5BZDEyN2NhMjgtMjdhNi00MmNlLWE5YTgtZGE4MzNjMTRlMGEwXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_FMjpg_UX1000_.jpg"
-          />
+          <CardMedia sx={{ height: "100%" }} image={Poster} />
           <CardContentStyle>
             <Typography color="text.primary" variant="h6" fontWeight="bold">
-              Title
+              {title}
             </Typography>
             <Typography color="text.primary" variant="h6">
-              Type
+              {type}
             </Typography>
             <Typography color="text.primary" variant="h6">
-              30-5-2020
+              {year}
             </Typography>
           </CardContentStyle>
         </CardStyle>

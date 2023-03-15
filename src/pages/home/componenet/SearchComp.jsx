@@ -1,8 +1,10 @@
 import { Box, TextField } from "@mui/material";
 import SavedSearchIcon from "@mui/icons-material/SavedSearch";
-import React from "react";
+import React, { useContext } from "react";
+import { searchContext } from "../../../context/searchContext";
 
 const SearchComp = () => {
+  const { setSearchWord } = useContext(searchContext);
   return (
     <Box
       display="flex"
@@ -13,9 +15,10 @@ const SearchComp = () => {
       <SavedSearchIcon color="info" sx={{ mr: 1 }} fontSize="large" />
       <TextField
         id="standard-basic"
-        label="Standard"
+        label="Seacrh"
         variant="standard"
         fullWidth
+        onChange={(e) => setSearchWord(e.target.value)}
       />
     </Box>
   );
