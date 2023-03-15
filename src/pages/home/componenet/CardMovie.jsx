@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { styled } from "@mui/material/styles";
 
-const CardMovie = ({ Poster, year, type, title, imdbID }) => {
+const CardMovie = ({ Poster, year, type, title, id }) => {
   const theme = useTheme();
   const CardContentStyle = styled(CardContent)`
     position: absolute;
@@ -30,10 +30,15 @@ const CardMovie = ({ Poster, year, type, title, imdbID }) => {
       transform: translateY(0);
     }
   `;
+  const getQueriesForElement = async (id) => {
+    const data = await fetch(
+      `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchWord}`
+    );
+  };
   return (
     <>
       <CardActionArea>
-        <CardStyle>
+        <CardStyle onClick={() => getQueriesForElement(id)}>
           <CardMedia sx={{ height: "100%" }} image={Poster} />
           <CardContentStyle>
             <Typography color="text.primary" variant="h6" fontWeight="bold">

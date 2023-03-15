@@ -33,7 +33,6 @@ export const SearchContextProvider = ({ children }) => {
   };
   useEffect(() => {
     const depounce = setTimeout(function () {
-      //code goes here
       if (searchWord.trim()) {
         getFilm();
       }

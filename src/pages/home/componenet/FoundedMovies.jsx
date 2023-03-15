@@ -22,7 +22,9 @@ const FoundedMovies = () => {
         </Grid>
       ))
     ) : (
-      <Typography variant="h2">Not Films Exist</Typography>
+      <Typography color="text.primary" variant="h2">
+        Not Films Exist
+      </Typography>
     );
   return (
     <div>
