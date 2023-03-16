@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 const CardMovie = ({ Poster, year, type, title, id }) => {
   const theme = useTheme();
@@ -30,15 +31,11 @@ const CardMovie = ({ Poster, year, type, title, id }) => {
       transform: translateY(0);
     }
   `;
-  const getQueriesForElement = async (id) => {
-    const data = await fetch(
-      `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchWord}`
-    );
-  };
+  const Navigate = useNavigate();
   return (
     <>
       <CardActionArea>
-        <CardStyle onClick={() => getQueriesForElement(id)}>
+        <CardStyle onClick={() => Navigate(`/movie/${id}`)}>
           <CardMedia sx={{ height: "100%" }} image={Poster} />
           <CardContentStyle>
             <Typography color="text.primary" variant="h6" fontWeight="bold">
