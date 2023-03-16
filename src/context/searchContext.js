@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-
+import { fetchData } from "../Hooks/UseFetchData";
 export const searchContext = createContext();
 
 export const SearchContextProvider = ({ children }) => {
@@ -12,10 +12,8 @@ export const SearchContextProvider = ({ children }) => {
   const getFilm = async () => {
     try {
       setIsLoad(true);
-      const data = await fetch(
-        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${searchWord}`
-      );
-      const res = await data.json();
+      const res = await fetchData(`s=${searchWord}`);
+
       if (res.Response == "True") {
         console.log(res.Response);
         setIsError(null);
@@ -33,7 +31,6 @@ export const SearchContextProvider = ({ children }) => {
   };
   useEffect(() => {
     const depounce = setTimeout(function () {
-      //code goes here
       if (searchWord.trim()) {
         getFilm();
       }

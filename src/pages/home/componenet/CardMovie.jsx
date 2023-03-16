@@ -8,8 +8,9 @@ import {
 } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
-const CardMovie = ({ Poster, year, type, title, imdbID }) => {
+const CardMovie = ({ Poster, year, type, title, id }) => {
   const theme = useTheme();
   const CardContentStyle = styled(CardContent)`
     position: absolute;
@@ -30,10 +31,11 @@ const CardMovie = ({ Poster, year, type, title, imdbID }) => {
       transform: translateY(0);
     }
   `;
+  const Navigate = useNavigate();
   return (
     <>
       <CardActionArea>
-        <CardStyle>
+        <CardStyle onClick={() => Navigate(`/movie/${id}`)}>
           <CardMedia sx={{ height: "100%" }} image={Poster} />
           <CardContentStyle>
             <Typography color="text.primary" variant="h6" fontWeight="bold">
