@@ -47,7 +47,6 @@ const Header = () => {
                 Favorite Films
               </Typography>
                 </Grid>
-
                 <Grid item>
               <Avatar
                 sx={{ width: 60, height: 60 }}
