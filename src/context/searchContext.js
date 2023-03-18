@@ -19,6 +19,7 @@ export const SearchContextProvider = ({ children }) => {
         setIsError(null);
 
         setFilm(res.Search);
+        console.log(films);
       } else {
         setIsError(res.Error);
         console.log("Error");
