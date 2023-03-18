@@ -7,10 +7,8 @@ import { SearchContextProvider } from "../../context/searchContext";
 const Home = () => {
   return (
     <Box>
-      <SearchContextProvider>
         <SearchComp />
         <FoundedMovies />
-      </SearchContextProvider>
     </Box>
   );
 };

@@ -32,11 +32,30 @@ const Header = () => {
               </Typography>
             </Grid>
             <Grid item>
+              <Grid container spacing={2} alignItems="center">
+              
+
+                <Grid item>
+                <Typography
+                color="primary"
+                sx={{ textDecoration: "none" }}
+                as={Link}
+                to="/favpage"
+                variant="h5"
+                component="p"
+              >
+                Favorite Films
+              </Typography>
+                </Grid>
+
+                <Grid item>
               <Avatar
                 sx={{ width: 60, height: 60 }}
                 src="https://pbs.twimg.com/profile_images/615688210841255936/lC0QQUKr_400x400.jpg"
                 alt="movie-avatar"
-              />
+                />
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Container>

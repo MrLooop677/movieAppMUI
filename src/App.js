@@ -5,6 +5,8 @@ import { Box, Container } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import { darkTheme, lightTheme } from "./theme/theme";
 import { useState } from "react";
+import { SearchContextProvider } from "./context/searchContext";
+import { FavContextProvider } from "./context/favContext";
 
 
 function App() {
@@ -15,7 +17,12 @@ function App() {
       <Header/>
       <Container>
       <SwitchMode isDarkMode={isDarkMode} setDarkMode={setDarkMode}/>
+      <SearchContextProvider>
+      <FavContextProvider>
       <Outlet/>
+      </FavContextProvider>
+      </SearchContextProvider>
+
 
       </Container>
       </Box>
